@@ -81,3 +81,7 @@
     position: relative;
     cursor: pointer;
 }
+
+.TodoItem-p--complete{
+    text-decoration: line-through;
+}
