@@ -1,0 +1,27 @@
+.CreateTodoButton{
+    margin: auto;
+    align-self: center;
+    padding:16px 25px 16px 25px;
+    font-size: 55px;
+    color:  rgb(248, 131, 131);
+    background-color: antiquewhite;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.CreateTodoButton:hover{
+    background-color: rgb(252, 220, 181);
+    color: rgb(251, 92, 92);
+    cursor: pointer;
+}
+
+.buttonContainer{
+    display: flex;
+    width: 100%;
+    min-width: 240px;
+    justify-content: center;
+    align-items: center;
+}

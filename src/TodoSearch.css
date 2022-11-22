@@ -1,0 +1,22 @@
+input{
+ position: relative;
+ display: inline-block;
+ width: 100%;
+ max-width: 500px;
+ min-width: 250px;
+ background-color: antiquewhite;
+ outline: none;
+ border: none;
+ padding: 5px;
+ border-radius: 5px;
+ color: #333;
+ text-align: center;
+ margin: auto;
+}
+
+.TodoDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 250px;
+}

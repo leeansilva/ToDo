@@ -1,0 +1,37 @@
+body{
+    background-color: #333;
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.containerCounter{
+    position: relative;
+    margin: auto;
+    min-width: 250px;
+    max-width: 400px;
+    height: 100px;
+}
+
+h2{
+    position: absolute;
+    left: 0;
+    color: antiquewhite;
+    width: 80px;
+    top: -20px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid rgb(248, 131, 131);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+h3{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: antiquewhite;
+    border-bottom: 1px solid rgb(248, 131, 131);
+    padding: 4px  ;
+    }

@@ -1,0 +1,16 @@
+.TodoListSection{
+    background-color: transparent;
+    border: 1px solid rgb(248, 131, 131);
+    margin-top: 16px;
+    border-radius: 5px ;
+    -webkit-border-radius: 5px ;
+    -moz-border-radius: 5px ;
+    -ms-border-radius: 5px ;
+    -o-border-radius: 5px ;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-width: 265px;
+    max-width: 550px;
+    margin: 16px auto;
+}

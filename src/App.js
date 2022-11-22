@@ -1,24 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { TodoCounter } from './TodoCounter';
+import { TodoSearch } from './TodoSearch';
+import { TodoList } from './TodoList';
+import { TodoItem } from './TodoItem.';
+import { CreateTodoButton} from './CreateTodoButton'
+// import './App.css';
+
+const todos = [
+  { text: 'Cortar cebolla', completed: false},
+  { text: 'Tomar el curso de intro a React', completed: false},
+  { text: 'Llorar con la llorona', completed: false}
+
+]
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <React.Fragment>
+        <TodoCounter />
+        
+        <TodoSearch />
+
+        
+        <TodoList>
+        {/* Hacemos un .map, del array de todos, en el que se van a crear TodoItem, por cada elemento
+        dentro del array. Pasamos como propiedad "text", para usarlo en el componente TodoItem y rellenar campos nece-
+        sarios con esa informacion */}
+
+
+          {  todos.map(todo => (
+            <TodoItem 
+            key={todo.text} 
+            text={todo.text}
+            completed={todo.completed}/>
+          ))}
+        </TodoList>
+        {/* Cuando hacemos este tipo de cosas de renderizar componentes en una lista con .map, Tenemos que enviarle una 
+        propiedad especial que se llama "key", a nuestros componentes. Esto es para que react pueda identificar cual componente
+        es cual dentro de una lista. Y asi nos evite renders innecesarios, cuando un elemento no debe cambiar. Debemos enviarle un 
+        identificador unico a cada uno de nuestro elemento. */}
+
+        <CreateTodoButton />
+        
+   </React.Fragment>
   );
 }
 
