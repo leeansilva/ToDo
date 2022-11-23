@@ -3,7 +3,7 @@ import './TodoSearch.css';
 
 function TodoSearch() {
     const onChangeSearchValue = (e)=>{
-        console.log(e.target.value)
+        console.log(e.target.value);
     }
     return (
         <div className="TodoDiv">
