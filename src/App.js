@@ -6,7 +6,7 @@ import { TodoItem } from './TodoItem.';
 import { CreateTodoButton} from './CreateTodoButton'
 // import './App.css';
 
-const todos = [
+const defaultTodos = [
   { text: 'Cortar cebolla', completed: false},
   { text: 'Tomar el curso de intro a React', completed: false},
   { text: 'Llorar con la llorona', completed: false}
@@ -14,11 +14,25 @@ const todos = [
 ]
 
 function App() {
+  const [todos, setTodos] = React.useState(defaultTodos)
+  const [searchValue, setSearchValue] = React.useState('')
+
+  const completedTodos = todos.filter(todo => !!todo.completed).length;
+  const totalTodos = todos.length;
   return (
    <React.Fragment>
-        <TodoCounter />
+        <TodoCounter 
+        total={totalTodos}
+        completed={completedTodos}
+        />
         
-        <TodoSearch />
+        <TodoSearch 
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
+
+        // le pasamos las props, para que el componente las lea como valores para useState. Los sacamos del componente search y lo escribimos aca por un tema de optimizacion y no abusar de los re-renders.
+
+        />
 
         
         <TodoList>
