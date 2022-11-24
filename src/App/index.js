@@ -1,17 +1,31 @@
+import { paste } from '@testing-library/user-event/dist/paste';
 import React from 'react';
 import {AppUI} from "./AppUI"
 // import './App.css';
 
-const defaultTodos = [
-  { text: 'Cortar cebolla', completed: false},
-  { text: 'Tomar el curso de intro a React', completed: false},
-  { text: 'Llorar con la llorona', completed: false}
+// const defaultTodos = [
+//   { text: 'Cortar cebolla', completed: false},
+//   { text: 'Tomar el curso de intro a React', completed: false},
+//   { text: 'Llorar con la llorona', completed: false}
 
-]
+// ]
 
 function App() {
+  //variables de localStorage
+  const localStorageTodos = localStorage.getItem('TODOS_V1');
+
+  let parsedTodos;
+
+  //condicionales para local storage
+  if(!localStorageTodos) {
+    localStorage.setItem('TODOS_V1', JSON.stringify([]));
+    parsedTodos = [];
+  } else {
+    parsedTodos = JSON.parse(localStorageTodos);
+  }
+
   //variables para los todos y el search value
-  const [todos, setTodos] = React.useState(defaultTodos)
+  const [todos, setTodos] = React.useState(parsedTodos)
   const [searchValue, setSearchValue] = React.useState('')
 
   //variables para todoItem
@@ -48,7 +62,7 @@ function App() {
     const todoIndex = todos.findIndex(todo => todo.text === text)
     //accedemos a esa posicion y le modificamos el complete:
     newTodos[todoIndex].completed = true;
-    setTodos(newTodos);
+    saveTodos(newTodos);
   
   }
 
@@ -60,9 +74,21 @@ function App() {
     const todoIndex = todos.findIndex(todo => todo.text === text)
                               //desde donde queremos que borre, y cuantos elementos quereos que borre.
     newTodos.splice(todoIndex, 1);
-    setTodos(newTodos);
+    saveTodos(newTodos);
   
   }
+
+  //funcion puente entre local storage y nuestras funciones de complete y delete
+  //esta funcion recibe como parametro al nuevo array de ToDos
+  const saveTodos = (newTodos) =>{
+    const stringifiedTodos = JSON.stringify(newTodos);
+    //creamos una variable que contiene a los todos en string
+    localStorage.setItem("TODOS_V1",stringifiedTodos);
+    //los seteamos en localstorage
+    setTodos(newTodos)  
+    //y los seteamos como nuevo estado.
+  }
+
 
   return (
     <AppUI 
