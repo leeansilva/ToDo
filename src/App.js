@@ -14,13 +14,19 @@ const defaultTodos = [
 ]
 
 function App() {
+  //variables para los todos y el search value
   const [todos, setTodos] = React.useState(defaultTodos)
   const [searchValue, setSearchValue] = React.useState('')
 
+  //variables para todoItem
   const completedTodos = todos.filter(todo => !!todo.completed).length;
   const totalTodos = todos.length;
   
+  //array vacio para llenarlo con las validaciones
   let searchedTodos = [];
+
+
+  // validaciones para el buscador 
 
   if (!searchValue.length >= 1){
     searchedTodos = todos;
@@ -34,6 +40,32 @@ function App() {
       //Le preguntamos a search si hay algo de lo que escribimos
       return todoText.includes(searchText)
     })
+  }
+
+  //funcion para los todosCompletados
+
+  const completeTodos = (text) => {
+    //para poder modificar la lista de todos(Ya que no podemos modificar el array de defaul todos directamente), hacemos una copia
+    const newTodos = [...todos]
+
+    //por cada todo, vamos a pedir a findIndex, que nos filtre a los todos que tengan el texto, igual al texto que le pasemos cuando llamemos la funcion
+    const todoIndex = todos.findIndex(todo => todo.text === text)
+    //accedemos a esa posicion y le modificamos el complete:
+    newTodos[todoIndex].completed = true;
+    setTodos(newTodos);
+  
+  }
+
+  //funcion para los eliminados:
+
+  const deleteTodos = (text) => {
+    const newTodos = [...todos]
+
+    const todoIndex = todos.findIndex(todo => todo.text === text)
+                              //desde donde queremos que borre, y cuantos elementos quereos que borre.
+    newTodos.splice(todoIndex, 1);
+    setTodos(newTodos);
+  
   }
 
   return (
@@ -60,7 +92,12 @@ function App() {
             <TodoItem 
             key={todo.text} 
             text={todo.text}
-            completed={todo.completed}/>
+            completed={todo.completed}
+
+            // pasamos como propiedad la funcion, para luego usarla dentro del componente todo item, mediante props.onComplete
+            onComplete={() => completeTodos(todo.text)}
+            onDelete={()=> deleteTodos(todo.text)}
+            />
           ))}
         </TodoList>
         {/* Cuando hacemos este tipo de cosas de renderizar componentes en una lista con .map, Tenemos que enviarle una 
