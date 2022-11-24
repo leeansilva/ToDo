@@ -19,6 +19,23 @@ function App() {
 
   const completedTodos = todos.filter(todo => !!todo.completed).length;
   const totalTodos = todos.length;
+  
+  let searchedTodos = [];
+
+  if (!searchValue.length >= 1){
+    searchedTodos = todos;
+  } else {
+    searchedTodos = todos.filter(todo => {
+      //estamos llamandoa c/u de los todos, y x c/u estamos convirtiendo su texto en minusculas
+
+      const todoText = todo.text.toLowerCase();
+      const searchText = searchValue.toLowerCase();
+
+      //Le preguntamos a search si hay algo de lo que escribimos
+      return todoText.includes(searchText)
+    })
+  }
+
   return (
    <React.Fragment>
         <TodoCounter 
@@ -36,12 +53,10 @@ function App() {
 
         
         <TodoList>
-        {/* Hacemos un .map, del array de todos, en el que se van a crear TodoItem, por cada elemento
-        dentro del array. Pasamos como propiedad "text", para usarlo en el componente TodoItem y rellenar campos nece-
-        sarios con esa informacion */}
 
+        {/*  le hacemos un map a searchedTodos porque sino cumplen con la condicion es lo mismo que default todos, y si cumple la condicion, mostramos solo los que filtramos y se meten dentro del array vacio gracias al return */}
 
-          {  todos.map(todo => (
+          {  searchedTodos.map(todo => (
             <TodoItem 
             key={todo.text} 
             text={todo.text}
