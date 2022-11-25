@@ -6,6 +6,8 @@ import { TodoItem } from '../TodoItem';
 import { CreateTodoButton} from '../CreateTodoButton'
 
 function AppUI({
+loading,
+error,
 totalTodos,
 completedTodos,
 searchValue,
@@ -34,6 +36,9 @@ deleteTodos
         <TodoList>
 
         {/*  le hacemos un map a searchedTodos porque sino cumplen con la condicion es lo mismo que default todos, y si cumple la condicion, mostramos solo los que filtramos y se meten dentro del array vacio gracias al return */}
+          {error && <p>Desesperante error</p>}
+          {loading && <p>Estamos cargando, no desesperes</p>}
+          {(!loading && !searchedTodos.length) && <p>Crea tu primer TODO</p>}
 
           {  searchedTodos.map(todo => (
             <TodoItem 
