@@ -9,23 +9,48 @@ import {AppUI} from "./AppUI"
 //   { text: 'Llorar con la llorona', completed: false}
 
 // ]
+//creamos un custom hook que recibe como parametro el nombre del itemo con el que queremos trabajar y un valor inicial.
+function useLocalStorage(itemName, initialValue){
+   //variables de localStorage
+   const localStorageItem = localStorage.getItem(itemName);
+   let parsedItem;
+ 
+   //condicionales para local storage
+   if(!localStorageItem) {
+     localStorage.setItem(itemName, JSON.stringify(initialValue));
+     parsedItem = initialValue;
+   } else {
+     parsedItem = JSON.parse(localStorageItem);
+   }
+
+   //variable para funcion saveItem:
+   const [item, setItem] = React.useState(parsedItem)
+   //funcion puente entre local storage y nuestras funciones de complete y delete
+  //esta funcion recibe como parametro al nuevo array de ToDos
+    const saveItem = (newItem) =>{
+    const stringifiedItem = JSON.stringify(newItem);
+    //creamos una variable que contiene a los todos en string
+    localStorage.setItem(itemName,stringifiedItem);
+    //los seteamos en localstorage
+    setItem(newItem)  
+    //y los seteamos como nuevo estado.
+  };
+
+  return [
+    item,
+    saveItem,
+  ];
+
+}
+
 
 function App() {
+ 
   //variables de localStorage
-  const localStorageTodos = localStorage.getItem('TODOS_V1');
 
-  let parsedTodos;
-
-  //condicionales para local storage
-  if(!localStorageTodos) {
-    localStorage.setItem('TODOS_V1', JSON.stringify([]));
-    parsedTodos = [];
-  } else {
-    parsedTodos = JSON.parse(localStorageTodos);
-  }
-
+  const [todos, saveTodos] = useLocalStorage('TODOS_V1',[])
   //variables para los todos y el search value
-  const [todos, setTodos] = React.useState(parsedTodos)
+  
   const [searchValue, setSearchValue] = React.useState('')
 
   //variables para todoItem
@@ -78,16 +103,7 @@ function App() {
   
   }
 
-  //funcion puente entre local storage y nuestras funciones de complete y delete
-  //esta funcion recibe como parametro al nuevo array de ToDos
-  const saveTodos = (newTodos) =>{
-    const stringifiedTodos = JSON.stringify(newTodos);
-    //creamos una variable que contiene a los todos en string
-    localStorage.setItem("TODOS_V1",stringifiedTodos);
-    //los seteamos en localstorage
-    setTodos(newTodos)  
-    //y los seteamos como nuevo estado.
-  }
+ 
 
 
   return (
