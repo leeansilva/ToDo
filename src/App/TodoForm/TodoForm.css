@@ -1,0 +1,93 @@
+form {
+    width: 90%;
+    max-width: 300px;
+    background-color: #333;
+    padding: 33px 40px;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+  
+  label {
+    text-align: center;
+    font-weight: bold;
+    color: rgb(248, 131, 131);
+    margin-bottom: 26px;
+  }
+  
+  textarea {
+    background-color: #F9FBFC;
+    border: 2px, solid #202329;
+    border-radius: 2px;
+    box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.25);
+    color: #1E1E1F;
+    font-size: 20px;
+    text-align: center;
+    padding: 12px;
+    height: 96px;
+    width: calc(100%-25px);
+  }
+  
+  textarea::placeholder {
+  color: #a5a5a5;
+  font-family: sans-serif;
+  font-weight: 400;
+  }
+  
+  textarea:focus {
+    outline-color: rgb(248, 131, 131);
+  }
+  
+  .TodoForm-buttonContainer {
+    margin-top: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .TodoForm-button {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 20px;
+    color: #202329;
+    font-weight: 400;
+    width: 120px;
+    height: 48px;
+    border-radius: 2px;
+    border: none;
+    font-family: sans-serif;
+  }
+  
+  .TodoForm-button-add {
+    background-color: rgb(248, 131, 131);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.TodoForm-button-add:hover{
+    box-shadow: 0px 2px 5px rgb(246, 72, 72);
+    transition: all .2s;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
+}
+
+  
+  .TodoForm-button-cancel {
+    background: transparent;
+    color: antiquewhite;
+    margin: 5px;
+  }
+
+  .TodoForm-button-cancel:hover{
+    box-shadow: 0px 2px 5px rgb(246, 72, 72);
+  }
