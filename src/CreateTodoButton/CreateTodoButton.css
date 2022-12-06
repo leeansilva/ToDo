@@ -1,15 +1,14 @@
 .CreateTodoButton{
-    margin: auto;
     align-self: center;
-    padding:16px 25px 16px 25px;
+    padding:8px 18px 8px 18px;
     font-size: 55px;
     color:  rgb(248, 131, 131);
     background-color: antiquewhite;
     border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
+    z-index: 20000;
+    position: fixed;
+    bottom: 360px;
+    
 }
 
 .CreateTodoButton:hover{
@@ -19,9 +18,12 @@
 }
 
 .buttonContainer{
-    display: flex;
-    width: 100%;
-    min-width: 240px;
-    justify-content: center;
-    align-items: center;
+   width: 100%;
+   max-width: 550px;
+   display: flex;
+   align-items: center;
+   justify-content: right;
+   height: 150px;
+   margin: auto;
+
 }

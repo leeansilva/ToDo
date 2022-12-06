@@ -4,10 +4,6 @@ import './TodoItem.css';
 // Por cada elemento dentro del Array, se va  acrear un nuevo li y con todo su respectivos elementos.
 
 function TodoItem(props) {
-
-   const onDelete= () =>{
-    alert('Eliminaste el ToDo: ' + props.text)
-   }
     return (
         <li className="TodoItemLi">
             <span 

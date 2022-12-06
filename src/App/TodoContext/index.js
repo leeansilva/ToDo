@@ -18,6 +18,8 @@ function TodoProvider(props){
   //variables para los todos y el search value
   
   const [searchValue, setSearchValue] = React.useState('')
+  //variable para modal.
+  const [openModal, setOpenModal] = React.useState(false)
 
   //variables para todoItem
   const completedTodos = todos.filter(todo => !!todo.completed).length;
@@ -42,6 +44,18 @@ function TodoProvider(props){
       return todoText.includes(searchText)
     })
   }
+
+  
+  const addTodo = (text) => {
+    const newTodos = [...todos];   
+    newTodos.push({
+      completed: false,
+      text,
+    });
+    saveTodos(newTodos);
+  
+  }
+
 
   //funcion para los todosCompletados
 
@@ -83,7 +97,10 @@ function TodoProvider(props){
             setSearchValue,
             searchedTodos,
             completeTodos,
+            addTodo,
             deleteTodos,
+            openModal,
+            setOpenModal,
         }}>
             {/* Sin importar que componente llamemos vamos a poder enviarlo aquí, Y estos componentes van a poder utilizar nuestro consumidor. */}
             {props.children}

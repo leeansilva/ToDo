@@ -6,6 +6,7 @@ import { TodoItem } from '../TodoItem';
 import { CreateTodoButton} from '../CreateTodoButton'
 import { todoContext } from './TodoContext'
 import { Modal } from "../Modal"
+import { TodoForm } from "./TodoForm";
 
 
 
@@ -14,7 +15,10 @@ function AppUI(){
     loading, 
     searchedTodos, 
     completeTodos,
-    deleteTodos} = React.useContext(todoContext);
+    deleteTodos,
+    openModal,
+    setOpenModal
+  } = React.useContext(todoContext);
     
     return(
         <React.Fragment>
@@ -45,14 +49,18 @@ function AppUI(){
           //     es cual dentro de una lista. Y asi nos evite renders innecesarios, cuando un elemento no debe cambiar. Debemos enviarle un 
           // identificador unico a cada uno de nuestro elemento. */}
               
+          {/* //Si openModal es true, entonces renderizame esto.     */}
+          {!!openModal && (
           <Modal>
-            {/* El signo de pregunta esta preguntando si existe la propiedad, antes de imprimir.text */}
-            <h3>{searchedTodos[0]?.text}</h3>
+           <TodoForm />
           </Modal>
+          )}
 
         
 
-        <CreateTodoButton />
+        <CreateTodoButton 
+        setOpenModal={setOpenModal}
+        />
         
    </React.Fragment>
     );
