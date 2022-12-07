@@ -28,7 +28,7 @@
     color: antiquewhite;
     margin-right: 5px;
     background-color: #222;
-    padding: 2px 5px 5px 5px;
+    padding: 6px 8px 5px 8px;
     border-radius: 50%;
     position: relative;
     cursor: pointer;
@@ -48,7 +48,7 @@
     color: rgb(246, 72, 72);
     margin-right: 5px;
     background-color: #222;
-    padding: 2px 5px 5px 5px;
+    padding: 6px 8px 5px 8px;
     border-radius: 50%;
     position: relative;
     cursor: pointer;
@@ -76,7 +76,7 @@
     color: rgb(176, 254, 181);
     margin-right: 5px;
     background-color: rgb(255, 195, 195);
-    padding: 2px 5px 5px 5px;
+    padding: 6px 8px 5px 8px;
     border-radius: 50%;
     position: relative;
     cursor: pointer;
