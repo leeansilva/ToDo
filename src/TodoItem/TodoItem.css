@@ -15,7 +15,7 @@
 }
 
 .TodoItemLi:hover{
-    background-color: rgb(29, 28, 28);
+    background-color: rgb(158, 7, 7);
     transition: all 0.2s;
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
