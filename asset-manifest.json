@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/git@github.com:leeansilva/ToDo/static/css/main.ef89780f.css",
+    "main.js": "/git@github.com:leeansilva/ToDo/static/js/main.6b815862.js",
+    "index.html": "/git@github.com:leeansilva/ToDo/index.html",
+    "main.ef89780f.css.map": "/git@github.com:leeansilva/ToDo/static/css/main.ef89780f.css.map",
+    "main.6b815862.js.map": "/git@github.com:leeansilva/ToDo/static/js/main.6b815862.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ef89780f.css",
+    "static/js/main.6b815862.js"
+  ]
+}
