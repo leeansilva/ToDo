@@ -1,7 +1,7 @@
 import { paste } from '@testing-library/user-event/dist/paste';
 import React from 'react';
 import {AppUI} from "./AppUI"
-import { TodoProvider } from "./TodoContext/index.js";
+import { TodoProvider } from "../TodoContext";
 
 // const defaultTodos = [
 //   { text: 'Cortar cebolla', completed: false},

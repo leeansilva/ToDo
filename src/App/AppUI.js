@@ -4,9 +4,15 @@ import { TodoSearch } from '../TodoSearch';
 import { TodoList } from '../TodoList';
 import { TodoItem } from '../TodoItem';
 import { CreateTodoButton} from '../CreateTodoButton'
-import { todoContext } from './TodoContext'
+import { todoContext } from '../TodoContext'
 import { Modal } from "../Modal"
-import { TodoForm } from "./TodoForm";
+import { TodoForm } from "../TodoForm";
+
+import { TodosError } from "../Skeletons/TodosError"
+import { TodosEmpty } from "../Skeletons/TodosEmpty"
+import { TodosLoading } from "../Skeletons/TodosLoading"
+
+
 
 
 
@@ -28,9 +34,9 @@ function AppUI(){
        
                 <TodoList>
                 {/* le hacemos un map a searchedTodos porque sino cumplen con la condicion es lo mismo que default todos, y si cumple la condicion, mostramos solo los que filtramos y se meten dentro del array vacio gracias al return */}
-               {error && <p>Desesperante error</p>}
-               {loading && <p>Estamos cargando, no desesperes</p>}
-               {(!loading && !searchedTodos.length) && <p>Crea tu primer TODO</p>}
+               {error && <TodosError error={error}></TodosError>}
+               {loading && <TodosLoading />}
+               {(!loading && !searchedTodos.length) && <TodosEmpty />}
     
                {  searchedTodos.map(todo => (
                  <TodoItem 

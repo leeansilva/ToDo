@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { todoContext } from "../App/TodoContext";
+import { todoContext } from "../TodoContext";
 import './TodoSearch.css';
 
 function TodoSearch () {

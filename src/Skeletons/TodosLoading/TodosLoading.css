@@ -1,0 +1,90 @@
+.LoadingTodo-container{
+    color: antiquewhite;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: -20px;
+    align-items: center;
+    min-width: 250px;
+    max-width: 340px;
+    background-color: rgb(40, 40, 40);
+    border-radius: 5px;
+    margin-bottom: 5px;
+    padding-left: 4px;
+}
+
+.LoadingTodo-container:hover{
+    background-color: rgb(29, 28, 28);
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+}
+
+
+.LoadingTodo-completeIcon{
+    color: antiquewhite;
+    margin-right: 5px;
+    background-color: #222;
+    padding: 2px 5px 5px 5px;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+}
+
+.LoadingTodo-completeIcon:hover{
+    background-color: antiquewhite;
+    color: #222;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+}
+
+.LoadingTodo-deleteIcon{
+    color: rgb(246, 72, 72);
+    margin-right: 5px;
+    background-color: #222;
+    padding: 2px 5px 5px 5px;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+}
+
+.LoadingTodo-deleteIcon:hover{
+    background-color: antiquewhite;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+}
+
+.LoadingTodo-text{
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+.LoadingTodo-container,
+.LoadingTodo-completeIcon,
+.LoadingTodo-deleteIcon{
+    background: linear-gradient(90deg,rgb(44, 41, 41),rgb(19, 19, 19));
+    background-size: 400% 400%;
+    animation: loadingAnimation 3s ease-in-out infinite;
+    -webkit-animation: loadingAnimation 3s ease-in-out infinite;
+}
+
+@keyframes loadingAnimation {
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
