@@ -5,7 +5,7 @@ function TodosLoading(){
     return (
         <div className="LoadingTodo-container">
             <span className="LoadingTodo-completeIcon">✔</span>
-            <p className="LoadingTodo-text">Cargando...</p>
+            <p className="LoadingTodo-text">Loading...</p>
             <span className="LoadingTodo-deleteIcon">X</span>
         </div>
     )

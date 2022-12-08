@@ -5,7 +5,6 @@
     color:  rgb(248, 131, 131);
     background-color: antiquewhite;
     border-radius: 50%;
-    z-index: 20000;
     position: fixed;
     bottom: 360px;
     
@@ -26,4 +25,20 @@
    height: 150px;
    margin: auto;
 
+}
+
+@media screen and (max-width: 500px) {
+    .buttonContainer{
+        min-width: 280px;
+        width: 100%;
+        background-color:none;
+        justify-content: space-between;
+        bottom: 0;
+    }
+    
+    .CreateTodoButton{
+        bottom: 0;
+        position: relative;
+        margin: auto;
+    }
 }

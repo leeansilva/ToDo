@@ -14,7 +14,7 @@ function TodoSearch () {
         
         <div className="TodoDiv">
             <input 
-            placeholder='Cebolla'
+            placeholder='Search'
             value={searchValue} 
             onChange={onChangeSearchValue}
             />
