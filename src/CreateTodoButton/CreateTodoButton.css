@@ -5,7 +5,7 @@
     color:  rgb(248, 131, 131);
     background-color: antiquewhite;
     border-radius: 50%;
-    position: fixed;
+    position: relative;
     
 }
 
@@ -16,7 +16,6 @@
 }
 
 .buttonContainer{
-    background-color: red;
    width: 100%;
    max-width: 550px;
    display: flex;
