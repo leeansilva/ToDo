@@ -6,7 +6,6 @@
     background-color: antiquewhite;
     border-radius: 50%;
     position: fixed;
-    bottom: 360px;
     
 }
 
@@ -17,6 +16,7 @@
 }
 
 .buttonContainer{
+    background-color: red;
    width: 100%;
    max-width: 550px;
    display: flex;
